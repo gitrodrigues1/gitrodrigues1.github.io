@@ -12,6 +12,7 @@ import {
   FaUser,
 } from "react-icons/fa6";
 import type { IconType } from "react-icons";
+import ThemeSwitch from "./ThemeSwitch";
 import LanguageSwitch from "./LanguageSwitch";
 import { useI18n } from "@/i18n/locale";
 
@@ -59,7 +60,7 @@ export default function SideNav() {
           className="flex items-center gap-4 lg:block lg:text-center"
           aria-label={ui.backToTop}
         >
-          <span className="font-heading text-2xl font-bold uppercase tracking-wide text-slate-100 lg:hidden">
+          <span className="font-heading text-2xl font-bold uppercase tracking-wide text-fg-strong lg:hidden">
             {fullName}
           </span>
           <span className="hidden lg:block">
@@ -85,8 +86,11 @@ export default function SideNav() {
                 <li key={id} className="shrink-0">
                   <a
                     href={`#${id}`}
-                    className="relative flex items-center gap-3 whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-200"
-                    style={{ color: isActive ? undefined : "#94a3b8" }}
+                    className={`relative flex items-center gap-3 whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-200 ${
+                      isActive
+                        ? "text-primary"
+                        : "text-fg hover:text-fg-strong"
+                    }`}
                   >
                     {isActive && (
                       <motion.span
@@ -101,15 +105,7 @@ export default function SideNav() {
                         className="relative w-3.5 shrink-0 opacity-90"
                       />
                     )}
-                    <span
-                      className={
-                        isActive
-                          ? "relative text-primary"
-                          : "relative hover:text-slate-100"
-                      }
-                    >
-                      {label}
-                    </span>
+                    <span className="relative">{label}</span>
                   </a>
                 </li>
               );
@@ -117,14 +113,10 @@ export default function SideNav() {
           </ul>
         </nav>
 
-        {/* Mobile: toggle sits at the right end of the top bar */}
-        <div className="shrink-0 lg:hidden">
+        {/* Mobile: toggles sit at the right end of the top bar */}
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
+          <ThemeSwitch layoutId="theme-active-mobile" />
           <LanguageSwitch layoutId="lang-active-mobile" />
-        </div>
-
-        {/* Desktop: pinned to the bottom of the sidebar */}
-        <div className="mt-auto hidden pt-10 lg:self-center lg:pt-0 lg:block">
-          <LanguageSwitch layoutId="lang-active-desktop" />
         </div>
       </div>
     </aside>

@@ -48,19 +48,19 @@ export default function AboutSection() {
       </Reveal> */}
 
       <Reveal delay={0.1}>
-        <h1 className="mt-6 font-heading text-5xl font-bold uppercase leading-[0.95] text-slate-100 sm:text-6xl lg:text-7xl">
+        <h1 className="mt-6 font-heading text-5xl font-bold uppercase leading-[0.95] text-fg-strong sm:text-6xl lg:text-7xl">
           <span className="block">{profile.firstName}</span>
           <span className="block bg-gradient-to-r from-primary via-gold to-primary-soft bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,122,77,0.35)]">
             {profile.lastName}
           </span>
         </h1>
-        <p className="mt-4 font-heading text-lg font-medium uppercase tracking-[0.2em] text-slate-300 sm:text-xl">
+        <p className="mt-4 font-heading text-lg font-medium uppercase tracking-[0.2em] text-fg-soft sm:text-xl">
           {profile.role} - {profile.tagline}
         </p>
       </Reveal>
 
       <Reveal delay={0.2}>
-        <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold uppercase tracking-wider text-slate-400 sm:text-base">
+        <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold uppercase tracking-wider text-fg sm:text-base">
           {profile.location.map((part) => (
             <span key={part}>
               {part}
@@ -77,8 +77,8 @@ export default function AboutSection() {
       </Reveal>
 
       <Reveal delay={0.3}>
-        <div className="mt-8 max-w-3xl space-y-4 leading-relaxed text-slate-400">
-          <p className="text-lg font-semibold text-slate-200 sm:text-xl">
+        <div className="mt-8 max-w-3xl space-y-4 leading-relaxed text-fg">
+          <p className="text-lg font-semibold text-fg-strong sm:text-xl">
             {profile.about[0]}
           </p>
           {profile.about.slice(1).map((paragraph) => (
@@ -96,7 +96,7 @@ export default function AboutSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface/70 text-xl text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-[0_0_25px_rgba(255,122,77,0.45)]"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface/70 text-xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-[0_0_25px_rgba(255,122,77,0.45)]"
             >
               <Icon />
             </a>

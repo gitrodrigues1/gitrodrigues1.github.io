@@ -4,14 +4,23 @@
   --font-heading: var(--font-saira), "Saira Extra Condensed", ui-sans-serif, sans-serif;
   --font-body: var(--font-mulish), "Mulish", ui-sans-serif, sans-serif;
 
+  /* Surfaces (dark is the default; see .theme-light below) */
   --color-ink: #07080f;
   --color-surface: #0b0d17;
   --color-line: #1c2033;
 
+  /* Brand */
   --color-primary: #ff7a4d;
   --color-primary-soft: #ffb08c;
   --color-accent: #22d3ee;
   --color-gold: #fbbf24;
+
+  /* Foreground scale */
+  --color-fg-strong: #f1f5f9; /* slate-100 */
+  --color-fg-soft: #cbd5e1; /*  slate-300 */
+  --color-fg: #94a3b8; /*      slate-400 */
+  --color-fg-mute: #64748b; /* slate-500 */
+  --color-fg-faint: #475569; /* slate-600 */
 
   --animate-float: float 7s ease-in-out infinite;
 
@@ -26,6 +35,29 @@
   }
 }
 
+/*
+ * Light theme: overrides the same custom properties that every Tailwind
+ * color utility reads at runtime. Applied via a `.theme-light` class on
+ * <html> (set pre-paint by an inline script and kept in sync by
+ * <ThemeProvider>). Unlayered rules win over Tailwind's :root theme layer.
+ */
+.theme-light {
+  --color-ink: #f4f6fa;
+  --color-surface: #ffffff;
+  --color-line: #d8dfea;
+
+  --color-primary: #ea580c;
+  --color-primary-soft: #9a3412;
+  --color-accent: #0e7490;
+  --color-gold: #b45309;
+
+  --color-fg-strong: #0f172a;
+  --color-fg-soft: #334155;
+  --color-fg: #475569;
+  --color-fg-mute: #64748b;
+  --color-fg-faint: #94a3b8;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
@@ -33,7 +65,8 @@ html {
 
 @media (min-width: 1024px) {
   html {
-    scroll-padding-top: 0;
+    /* keep anchored section content clear of the fixed TopBar (h-14) */
+    scroll-padding-top: 3.5rem;
   }
 }
 
@@ -45,6 +78,7 @@ html {
 
 body {
   background-color: var(--color-ink);
+  transition: background-color 0.3s ease;
 }
 
 ::selection {

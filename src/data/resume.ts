@@ -43,6 +43,9 @@ export interface UIStrings {
   docTitle: string;
   language: string;
   navLabel: string;
+  theme: string;
+  darkMode: string;
+  lightMode: string;
   backToTop: string;
   skillsLanguages: string;
   skillsStack: string;

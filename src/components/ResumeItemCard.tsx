@@ -29,21 +29,21 @@ export default function ResumeItemCard({
         />
         <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
           <div>
-            <h3 className="font-heading text-2xl font-bold uppercase tracking-wide text-slate-100">
+            <h3 className="font-heading text-2xl font-bold uppercase tracking-wide text-fg-strong">
               {title}
             </h3>
             <div className="mt-1 text-sm font-bold uppercase tracking-[0.15em] text-primary">
               {subtitle}
             </div>
             {description && (
-              <p className="mt-3 leading-relaxed text-slate-400">{description}</p>
+              <p className="mt-3 leading-relaxed text-fg">{description}</p>
             )}
             {highlights && (
               <ul className="mt-4 space-y-2.5">
                 {highlights.map((highlight) => (
                   <li
                     key={highlight.slice(0, 40)}
-                    className="flex gap-3 text-sm leading-relaxed text-slate-400"
+                    className="flex gap-3 text-sm leading-relaxed text-fg"
                   >
                     <span
                       aria-hidden="true"

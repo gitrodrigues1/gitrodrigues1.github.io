@@ -39,7 +39,7 @@ export default function SkillsSection() {
   return (
     <Section id="skills" title={ui.skillsTitle}>
       <Reveal>
-        <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-slate-200 sm:text-2xl">
+        <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-fg-strong sm:text-2xl">
           {ui.skillsLanguages}
         </h3>
         <ul className="grid grid-cols-3 gap-4 sm:grid-cols-6">
@@ -48,10 +48,10 @@ export default function SkillsSection() {
               <Reveal delay={i * 0.05}>
                 <div
                   title={name}
-                  className="group flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-line/70 bg-surface/60 text-3xl text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:text-primary hover:shadow-[0_8px_30px_-12px_rgba(255,122,77,0.4)]"
+                  className="group flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-line/70 bg-surface/60 text-3xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:text-primary hover:shadow-[0_8px_30px_-12px_rgba(255,122,77,0.4)]"
                 >
                   <Icon />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary-soft">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-fg-mute group-hover:text-primary-soft">
                     {name}
                   </span>
                 </div>
@@ -62,7 +62,7 @@ export default function SkillsSection() {
       </Reveal>
 
       <Reveal delay={0.15} className="mt-12">
-        <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-slate-200 sm:text-2xl">
+        <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-fg-strong sm:text-2xl">
           {ui.skillsStack}
         </h3>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -78,7 +78,7 @@ export default function SkillsSection() {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full border border-line bg-ink/60 px-3 py-1 text-xs text-slate-300 transition-colors duration-200 hover:border-primary/50"
+                    className="rounded-full border border-line bg-ink/60 px-3 py-1 text-xs text-fg-soft transition-colors duration-200 hover:border-primary/50"
                   >
                     {item}
                   </li>
@@ -90,14 +90,14 @@ export default function SkillsSection() {
       </Reveal>
 
       <Reveal delay={0.15} className="mt-12">
-        <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-slate-200 sm:text-2xl">
+        <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-fg-strong sm:text-2xl">
           {ui.skillsPractices}
         </h3>
         <ul className="grid gap-3 sm:grid-cols-2">
           {content.practices.map((item) => (
             <li
               key={item}
-              className="flex items-center gap-3 rounded-lg border border-line/50 bg-surface/40 px-4 py-3 text-slate-300"
+              className="flex items-center gap-3 rounded-lg border border-line/50 bg-surface/40 px-4 py-3 text-fg-soft"
             >
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500/15 text-xs text-green-400">
                 <FaCheck />

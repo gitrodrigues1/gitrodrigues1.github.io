@@ -45,7 +45,7 @@ export default function LanguageSwitch({ layoutId }: LanguageSwitchProps) {
               className={
                 isActive
                   ? "relative text-accent"
-                  : "relative text-slate-500 transition-colors hover:text-slate-300"
+                  : "relative text-fg-mute transition-colors hover:text-fg-soft"
               }
             >
               {label}
