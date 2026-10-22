@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: var(--font-saira), "Saira Extra Condensed", ui-sans-serif, sans-serif;
+  --font-body: var(--font-mulish), "Mulish", ui-sans-serif, sans-serif;
+
+  --color-ink: #07080f;
+  --color-surface: #0b0d17;
+  --color-line: #1c2033;
+
+  --color-primary: #ff7a4d;
+  --color-primary-soft: #ffb08c;
+  --color-accent: #22d3ee;
+  --color-gold: #fbbf24;
+
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-ink);
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  color: #fff;
+}
+
+/* Slim, on-brand scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-primary) 60%, var(--color-line));
+}
+
+/* Film-grain overlay to break up flat gradients */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
