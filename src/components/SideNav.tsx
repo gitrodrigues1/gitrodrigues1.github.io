@@ -3,9 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { navSections, profile } from "@/data/resume";
-
-const fullName = `${profile.firstName} ${profile.lastName}`;
+import LanguageSwitch from "./LanguageSwitch";
+import { useI18n } from "@/i18n/locale";
 
 /**
  * Fixed vertical sidebar on desktop (like the original resume template),
@@ -13,7 +12,9 @@ const fullName = `${profile.firstName} ${profile.lastName}`;
  * Scroll-spy highlights the active section with a sliding pill.
  */
 export default function SideNav() {
-  const [active, setActive] = useState<string>(navSections[0].id);
+  const { content, fullName } = useI18n();
+  const { nav, ui } = content;
+  const [active, setActive] = useState<string>(nav[0].id);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,20 +26,20 @@ export default function SideNav() {
       { rootMargin: "-40% 0px -55% 0px" }
     );
 
-    for (const { id } of navSections) {
+    for (const { id } of nav) {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     }
     return () => observer.disconnect();
-  }, []);
+  }, [nav]);
 
   return (
     <aside className="fixed inset-x-0 top-0 z-40 border-b border-line/70 bg-surface/80 backdrop-blur-xl lg:inset-y-0 lg:left-0 lg:right-auto lg:w-64 lg:border-b-0 lg:border-r lg:bg-surface/60">
-      <div className="flex items-center gap-4 px-5 py-3 lg:block lg:h-full lg:overflow-y-auto lg:px-6 lg:py-10">
+      <div className="flex items-center gap-4 px-5 py-3 lg:h-full lg:flex-col lg:items-stretch lg:gap-0 lg:overflow-y-auto lg:px-6 lg:py-10">
         <a
           href="#about"
           className="flex items-center gap-4 lg:block lg:text-center"
-          aria-label="Back to top"
+          aria-label={ui.backToTop}
         >
           <span className="font-heading text-2xl font-bold uppercase tracking-wide text-slate-100 lg:hidden">
             {fullName}
@@ -55,11 +56,11 @@ export default function SideNav() {
         </a>
 
         <nav
-          aria-label="Resume sections"
-          className="min-w-0 flex-1 overflow-x-auto lg:overflow-visible"
+          aria-label={ui.navLabel}
+          className="min-w-0 flex-1 overflow-x-auto lg:w-full lg:flex-none lg:overflow-visible"
         >
           <ul className="flex items-center gap-1 lg:flex-col lg:items-stretch">
-            {navSections.map(({ id, label }) => {
+            {nav.map(({ id, label }) => {
               const isActive = active === id;
               return (
                 <li key={id} className="shrink-0">
@@ -90,6 +91,16 @@ export default function SideNav() {
             })}
           </ul>
         </nav>
+
+        {/* Mobile: toggle sits at the right end of the top bar */}
+        <div className="shrink-0 lg:hidden">
+          <LanguageSwitch layoutId="lang-active-mobile" />
+        </div>
+
+        {/* Desktop: pinned to the bottom of the sidebar */}
+        <div className="mt-auto hidden pt-10 lg:self-center lg:pt-0 lg:block">
+          <LanguageSwitch layoutId="lang-active-desktop" />
+        </div>
       </div>
     </aside>
   );

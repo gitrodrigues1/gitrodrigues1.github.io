@@ -12,7 +12,7 @@ const PALETTE = ["#ff7a4d", "#22d3ee", "#fbbf24", "#e2e8f0", "#a78bfa"];
 /**
  * Fixed full-screen three.js backdrop:
  * - a drifting field of glowing particles (additive Points)
- * - wireframe torus knot + icosahedron "monoliths"
+ * - a wireframe icosahedron "monolith"
  * - UnrealBloom glow (desktop only, for performance)
  * - mouse parallax + gentle scroll-driven rotation
  */
@@ -78,21 +78,6 @@ export default function ParticleField() {
     world.add(particles);
 
     // ---- Wireframe shapes ---------------------------------------------------
-    const knotMat = new THREE.MeshBasicMaterial({
-      color: 0xff7a4d,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.16,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    });
-    const knot = new THREE.Mesh(
-      new THREE.TorusKnotGeometry(2.4, 0.6, 220, 28),
-      knotMat
-    );
-    knot.position.set(6.5, 1.5, -10);
-    world.add(knot);
-
     const icosaMat = new THREE.MeshBasicMaterial({
       color: 0x22d3ee,
       wireframe: true,
@@ -153,8 +138,6 @@ export default function ParticleField() {
 
       particles.rotation.y = t * 0.025 + scrollY * 0.00018;
       particles.rotation.x = Math.sin(t * 0.08) * 0.06;
-      knot.rotation.x = t * 0.18;
-      knot.rotation.y = t * 0.24;
       icosa.rotation.x = -t * 0.12;
       icosa.rotation.y = t * 0.2;
 
@@ -193,8 +176,6 @@ export default function ParticleField() {
       composer?.dispose();
       particlesGeo.dispose();
       particlesMat.dispose();
-      knot.geometry.dispose();
-      knotMat.dispose();
       icosa.geometry.dispose();
       icosaMat.dispose();
       renderer.dispose();

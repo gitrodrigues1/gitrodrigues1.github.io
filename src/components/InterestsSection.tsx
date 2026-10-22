@@ -1,12 +1,14 @@
 "use client";
 
-import Reveal from "./Reveal";
 import Section from "./Section";
-import { interests } from "@/data/resume";
+import Reveal from "./Reveal";
+import { useI18n } from "@/i18n/locale";
 
 export default function InterestsSection() {
+  const { content } = useI18n();
+
   return (
-    <Section id="interests" title="Interests">
+    <Section id="interests" title={content.ui.interestsTitle}>
       <Reveal>
         <div className="relative max-w-3xl space-y-4 leading-relaxed text-slate-400">
           <span
@@ -15,7 +17,7 @@ export default function InterestsSection() {
           >
             “
           </span>
-          {interests.map((paragraph) => (
+          {content.interests.map((paragraph) => (
             <p key={paragraph.slice(0, 32)}>{paragraph}</p>
           ))}
         </div>

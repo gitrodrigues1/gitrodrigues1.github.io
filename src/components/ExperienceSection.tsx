@@ -2,13 +2,15 @@
 
 import Section from "./Section";
 import ResumeItemCard from "./ResumeItemCard";
-import { experience } from "@/data/resume";
+import { useI18n } from "@/i18n/locale";
 
 export default function ExperienceSection() {
+  const { content } = useI18n();
+
   return (
-    <Section id="experience" title="Experience">
+    <Section id="experience" title={content.ui.experienceTitle}>
       <div className="space-y-6">
-        {experience.map((item, i) => (
+        {content.experience.map((item, i) => (
           <ResumeItemCard
             key={`${item.company}-${item.period}`}
             title={item.role}

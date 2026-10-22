@@ -4,6 +4,7 @@ import ParticleField from "@/components/ParticleField";
 import ScrollProgress from "@/components/ScrollProgress";
 import SideNav from "@/components/SideNav";
 import SpotlightCursor from "@/components/SpotlightCursor";
+import { LocaleProvider } from "@/i18n/locale";
 import "./globals.css";
 
 const saira = Saira_Extra_Condensed({
@@ -48,11 +49,13 @@ export default function RootLayout({
           className="noise-overlay pointer-events-none fixed inset-0 -z-[5] opacity-[0.05] mix-blend-soft-light"
         />
 
-        <ScrollProgress />
-        <SpotlightCursor />
-        <SideNav />
+        <LocaleProvider>
+          <ScrollProgress />
+          <SpotlightCursor />
+          <SideNav />
 
-        <div className="pt-14 lg:pt-0 lg:pl-64">{children}</div>
+          <div className="pt-14 lg:pt-0 lg:pl-64">{children}</div>
+        </LocaleProvider>
       </body>
     </html>
   );

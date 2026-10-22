@@ -3,22 +3,25 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import Reveal from "./Reveal";
-import { profile } from "@/data/resume";
-
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: profile.social.github,
-    Icon: FaGithub,
-  },
-  {
-    label: "LinkedIn",
-    href: profile.social.linkedin,
-    Icon: FaLinkedinIn,
-  },
-];
+import { useI18n } from "@/i18n/locale";
 
 export default function AboutSection() {
+  const { content } = useI18n();
+  const { profile } = content;
+
+  const socialLinks = [
+    {
+      label: "GitHub",
+      href: profile.social.github,
+      Icon: FaGithub,
+    },
+    {
+      label: "LinkedIn",
+      href: profile.social.linkedin,
+      Icon: FaLinkedinIn,
+    },
+  ];
+
   return (
     <section
       id="about"

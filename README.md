@@ -2,17 +2,19 @@
 
 Modern personal resume site, rebuilt from the classic Start Bootstrap "Resume"
 template into a Next.js + TypeScript + Tailwind CSS application with an
-animated three.js particle backdrop.
+animated three.js particle backdrop and an EN ⇄ PT language toggle.
 
 ## Stack
 
 - [Next.js](https://nextjs.org) (App Router, static export for GitHub Pages)
 - [TypeScript](https://www.typescriptlang.org)
 - [Tailwind CSS v4](https://tailwindcss.com)
-- [three.js](https://threejs.org) — particle field, wireframe shapes and
+- [three.js](https://threejs.org) — particle field and
   UnrealBloom post-processing (`src/components/ParticleField.tsx`)
 - [Framer Motion](https://motion.dev) — scroll reveals, sliding nav pill,
   scroll progress bar
+- Lightweight i18n — `EN ⇄ PT` toggle (`src/i18n/locale.tsx`), persisted in
+  `localStorage` and auto-detected from the browser language
 
 ## Development
 
@@ -36,8 +38,12 @@ with the official GitHub Pages Actions. In the repository settings, set
 
 ## Content
 
-All résumé content lives in [`src/data/resume.ts`](src/data/resume.ts) —
-edit that single file to update experience, education, skills and awards.
+All résumé content lives in the typed dictionaries — keep both files in sync:
+
+- [`src/data/resume.en.ts`](src/data/resume.en.ts) — English
+- [`src/data/resume.pt.ts`](src/data/resume.pt.ts) — Brazilian Portuguese
+
+Types and the shared structure are in [`src/data/resume.ts`](src/data/resume.ts).
 
 ## Credits
 

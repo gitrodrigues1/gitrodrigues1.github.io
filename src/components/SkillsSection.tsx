@@ -15,7 +15,7 @@ import { SiMysql, SiNestjs, SiRedis, SiSpringboot } from "react-icons/si";
 import type { IconType } from "react-icons";
 import Reveal from "./Reveal";
 import Section from "./Section";
-import { practices, stackGroups } from "@/data/resume";
+import { useI18n } from "@/i18n/locale";
 
 const devIcons: { name: string; Icon: IconType }[] = [
   { name: "Java", Icon: FaJava },
@@ -33,11 +33,14 @@ const devIcons: { name: string; Icon: IconType }[] = [
 ];
 
 export default function SkillsSection() {
+  const { content } = useI18n();
+  const { ui } = content;
+
   return (
-    <Section id="skills" title="Skills">
+    <Section id="skills" title={ui.skillsTitle}>
       <Reveal>
         <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-slate-200 sm:text-2xl">
-          Languages, Frameworks &amp; Tools
+          {ui.skillsLanguages}
         </h3>
         <ul className="grid grid-cols-3 gap-4 sm:grid-cols-6">
           {devIcons.map(({ name, Icon }, i) => (
@@ -60,10 +63,10 @@ export default function SkillsSection() {
 
       <Reveal delay={0.15} className="mt-12">
         <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-slate-200 sm:text-2xl">
-          Tech Stack
+          {ui.skillsStack}
         </h3>
         <div className="grid gap-4 sm:grid-cols-2">
-          {stackGroups.map(({ title, items }) => (
+          {content.stackGroups.map(({ title, items }) => (
             <div
               key={title}
               className="rounded-xl border border-line/70 bg-surface/50 p-5 transition-colors duration-300 hover:border-accent/40"
@@ -88,10 +91,10 @@ export default function SkillsSection() {
 
       <Reveal delay={0.15} className="mt-12">
         <h3 className="mb-4 font-heading text-xl font-bold uppercase tracking-[0.15em] text-slate-200 sm:text-2xl">
-          Practices
+          {ui.skillsPractices}
         </h3>
         <ul className="grid gap-3 sm:grid-cols-2">
-          {practices.map((item) => (
+          {content.practices.map((item) => (
             <li
               key={item}
               className="flex items-center gap-3 rounded-lg border border-line/50 bg-surface/40 px-4 py-3 text-slate-300"
