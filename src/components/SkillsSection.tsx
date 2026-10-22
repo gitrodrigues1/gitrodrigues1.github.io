@@ -1,18 +1,19 @@
 "use client";
 
-import { FaCheck, FaCss3Alt, FaHtml5, FaJs, FaNpm, FaNodeJs, FaReact } from "react-icons/fa6";
+import { FaAws, FaCheck, FaDatabase, FaJava, FaJs, FaNodeJs, FaReact } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 import Reveal from "./Reveal";
 import Section from "./Section";
 import { workflow } from "@/data/resume";
 
 const devIcons: { name: string; Icon: IconType }[] = [
-  { name: "HTML5", Icon: FaHtml5 },
-  { name: "CSS3", Icon: FaCss3Alt },
+  { name: "Java", Icon: FaJava },
+  { name: "AWS", Icon: FaAws },
   { name: "JavaScript", Icon: FaJs },
   { name: "React", Icon: FaReact },
   { name: "Node.js", Icon: FaNodeJs },
-  { name: "npm", Icon: FaNpm },
+  // No brand glyph for SQL Server in the installed icon packs — generic database.
+  { name: "SQL Server", Icon: FaDatabase },
 ];
 
 export default function SkillsSection() {

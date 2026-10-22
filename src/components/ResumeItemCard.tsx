@@ -7,6 +7,7 @@ interface ResumeItemCardProps {
   subtitle: string;
   period: string;
   description?: string;
+  highlights?: string[];
   index?: number;
 }
 
@@ -16,6 +17,7 @@ export default function ResumeItemCard({
   subtitle,
   period,
   description,
+  highlights,
   index = 0,
 }: ResumeItemCardProps) {
   return (
@@ -35,6 +37,22 @@ export default function ResumeItemCard({
             </div>
             {description && (
               <p className="mt-3 leading-relaxed text-slate-400">{description}</p>
+            )}
+            {highlights && (
+              <ul className="mt-4 space-y-2.5">
+                {highlights.map((highlight) => (
+                  <li
+                    key={highlight.slice(0, 40)}
+                    className="flex gap-3 text-sm leading-relaxed text-slate-400"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-primary to-accent"
+                    />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
           <span className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent">

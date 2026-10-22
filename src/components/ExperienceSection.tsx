@@ -15,6 +15,7 @@ export default function ExperienceSection() {
             subtitle={item.company}
             period={item.period}
             description={item.description}
+            highlights={item.highlights}
             index={i}
           />
         ))}

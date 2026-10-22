@@ -10,6 +10,7 @@ export interface ExperienceItem {
   company: string;
   period: string;
   description: string;
+  highlights?: string[];
 }
 
 export interface EducationItem {
@@ -53,6 +54,31 @@ export const navSections: NavSection[] = [
 ];
 
 export const experience: ExperienceItem[] = [
+  {
+    role: "Backend Developer",
+    company: "Omie Experience S/A",
+    period: "July 2022 – November 2023",
+    description:
+      "Omie is one of the largest SaaS ERPs in Brazil, with a base of tens of thousands of business customers. Direct work on partner integrations and business API development.",
+    highlights: [
+      "Partner integration: developed and maintained APIs consumed by strategic ERP partners, ensuring stability and clear interface contracts.",
+      "NFS-e module from scratch: designed and delivered fiscal integration with city halls (Electronic Service Invoice), involving distinct JSON/XML data-format mapping per municipality — which demanded intense troubleshooting of integration flows.",
+      "Troubleshooting & production support: responsible for log analysis, diagnosis of failures in client integrations and resolution of production incidents, reducing mean time to recovery (MTTR).",
+      "Data flow validation: validated API responses and ensured JSON payload compliance between partner systems and the ERP — avoiding mass rejections in fiscal issuances.",
+    ],
+  },
+  {
+    role: "Backend Developer",
+    company: "Edify Education",
+    period: "October 2020 – July 2022",
+    description:
+      "E-commerce squad: development of APIs and integrations with external platforms, stack migration and AWS adoption.",
+    highlights: [
+      "Multi-partner integration: connected the e-commerce to VTEX and multiple carriers via REST APIs, managing distinct integration contracts per partner.",
+      "Java → NestJS migration: refactored the squad's stack, accelerating development of new integrations by ~35% and introducing systematic unit-test coverage.",
+      "AWS migration: moved squad applications to the cloud (EC2, S3, RDS), increasing resilience and enabling horizontal scaling of the integrations.",
+    ],
+  },
   {
     role: "System Analyst",
     company: "Oi S/A (Prestador de Serviços)",
