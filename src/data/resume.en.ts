@@ -2,13 +2,12 @@ import type { ResumeContent } from "./resume";
 
 const en: ResumeContent = {
   profile: {
-    firstName: "Marcos Aurélio",
-    lastName: "Rodrigues Ramos",
+    firstName: "Marcos",
+    lastName: "Ramos",
     role: "Backend Developer",
     tagline: "System Integration & API Specialist",
-    location: ["Rio de Janeiro · RJ", "(21) 98441-9879"],
+    location: ["Rio de Janeiro · RJ"],
     email: "rodrigues.ramos@gmail.com",
-    phone: "(21) 98441-9879",
     about: [
       "Backend developer with 4+ years of experience in systems integrations and REST APIs in high-demand environments. Used to working in cross-functional squads, collaborating directly with product, business and external technical partner teams.",
       "Proven track record of integration with external partners (VTEX, carriers, ERPs), data flow validation, log analysis and troubleshooting of failures in production. English B2 (TOEFL ITP).",
@@ -174,10 +173,8 @@ const en: ResumeContent = {
     "When forced indoors, I split a large amount of my free time educating and entertaining my 3 children and exploring the latest technology advancements in the web development world.",
   ],
   awards: [
-    "AWS Certified Solutions Architect – Associate",
-    "AWS Certified Cloud Practitioner",
-    "Java – Collection e Streams – Digital Innovation One",
-    "Introdução ao Github e comandos essenciais para trabalhar em equipe – Digital Innovation One",
+    "AWS Certified Solutions Architect – Associate (SAA-C03)",
+    "AWS Certified Cloud Practitioner (CLF-C02)",
     "Modelagem de Processos com Bizagi (BPMN)",
     "Totvs Formação – Programação Advpl",
     "Capacitação no ERP Totvs Microsiga Protheus: Configurador",

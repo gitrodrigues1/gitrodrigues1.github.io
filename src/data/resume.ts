@@ -35,7 +35,6 @@ export interface Profile {
   tagline: string;
   location: readonly string[];
   email: string;
-  phone: string;
   about: readonly string[];
   social: { linkedin: string; github: string };
 }
