@@ -54,7 +54,9 @@ export default function RootLayout({
           <SpotlightCursor />
           <SideNav />
 
-          <div className="pt-14 lg:pt-0 lg:pl-64">{children}</div>
+          <div className="min-h-screen bg-ink/25 pt-14 backdrop-blur-[3px] lg:pt-0 lg:pl-64">
+            {children}
+          </div>
         </LocaleProvider>
       </body>
     </html>

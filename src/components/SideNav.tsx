@@ -3,8 +3,26 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import {
+  FaBriefcase,
+  FaCode,
+  FaGraduationCap,
+  FaHeart,
+  FaTrophy,
+  FaUser,
+} from "react-icons/fa6";
+import type { IconType } from "react-icons";
 import LanguageSwitch from "./LanguageSwitch";
 import { useI18n } from "@/i18n/locale";
+
+const NAV_ICONS: Record<string, IconType> = {
+  about: FaUser,
+  experience: FaBriefcase,
+  education: FaGraduationCap,
+  skills: FaCode,
+  interests: FaHeart,
+  awards: FaTrophy,
+};
 
 /**
  * Fixed vertical sidebar on desktop (like the original resume template),
@@ -62,11 +80,12 @@ export default function SideNav() {
           <ul className="flex items-center gap-1 lg:flex-col lg:items-stretch">
             {nav.map(({ id, label }) => {
               const isActive = active === id;
+              const Icon = NAV_ICONS[id];
               return (
                 <li key={id} className="shrink-0">
                   <a
                     href={`#${id}`}
-                    className="relative block whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-200"
+                    className="relative flex items-center gap-3 whitespace-nowrap rounded-lg px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-200"
                     style={{ color: isActive ? undefined : "#94a3b8" }}
                   >
                     {isActive && (
@@ -74,6 +93,12 @@ export default function SideNav() {
                         layoutId="nav-active"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         className="absolute inset-0 rounded-lg bg-primary/10 ring-1 ring-primary/40"
+                      />
+                    )}
+                    {Icon && (
+                      <Icon
+                        aria-hidden="true"
+                        className="relative w-3.5 shrink-0 opacity-90"
                       />
                     )}
                     <span
