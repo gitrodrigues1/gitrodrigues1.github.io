@@ -37,7 +37,7 @@ export default function AboutSection() {
         />
       </Reveal>
 
-      <Reveal>
+      {/* <Reveal>
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary-soft">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -45,7 +45,7 @@ export default function AboutSection() {
           </span>
           {profile.role}
         </span>
-      </Reveal>
+      </Reveal> */}
 
       <Reveal delay={0.1}>
         <h1 className="mt-6 font-heading text-5xl font-bold uppercase leading-[0.95] text-slate-100 sm:text-6xl lg:text-7xl">
@@ -55,7 +55,7 @@ export default function AboutSection() {
           </span>
         </h1>
         <p className="mt-4 font-heading text-lg font-medium uppercase tracking-[0.2em] text-slate-300 sm:text-xl">
-          {profile.tagline}
+          {profile.role} - {profile.tagline}
         </p>
       </Reveal>
 
