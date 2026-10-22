@@ -1,5 +1,3 @@
-import type { IconType } from "react-icons";
-
 export interface NavSection {
   id: string;
   label: string;
@@ -20,26 +18,25 @@ export interface EducationItem {
   period: string;
 }
 
-export interface DevIcon {
-  key: string;
-  name: string;
-  icon: IconType;
+export interface StackGroup {
+  title: string;
+  items: string[];
 }
 
 export const profile = {
   firstName: "Marcos",
   lastName: "Ramos",
-  role: "Front-end Developer",
-  location: ["Saúde", "Rio de Janeiro · RJ", "(21) 98441-9879"],
-  email: "rodrigues.ramos@outlook.com",
+  role: "Backend Developer",
+  tagline: "System Integration & API Specialist",
+  location: ["Rio de Janeiro · RJ", "(21) 98441-9879"],
+  email: "rodrigues.ramos@gmail.com",
   phone: "(21) 98441-9879",
   about: [
-    "Front-end developer, passionate about technology and my 3 children. Crazy about music too.",
-    "I took my first steps in programming at the age of 15, studying Delphi in technical high school. Then, with the need to work and support my children, at 19 came my first job in the area of assembling and maintaining computers. It kept me for 8 years. Even though I didn't work directly with programming, I always developed solutions using programming concepts and also tried to keep up with technology.",
-    "With no money to pay for college, I decided to use the leftover time to study and pass the entrance exam of a federal university. And so I went to UFF, where I applied for the Technology in Computer Systems course. I worked in several companies over these years, acquired knowledge in hard skills and soft skills, but the desire to become a developer doesn't go away. That's my goal.",
+    "Backend developer with 4+ years of experience in systems integrations and REST APIs in high-demand environments. Used to working in cross-functional squads, collaborating directly with product, business and external technical partner teams.",
+    "Proven track record of integration with external partners (VTEX, carriers, ERPs), data flow validation, log analysis and troubleshooting of failures in production. English B2 (TOEFL ITP).",
   ],
   social: {
-    linkedin: "http://www.linkedin.com/in/marcos-ramos-8350074b",
+    linkedin: "https://www.linkedin.com/in/marcos-ramos1",
     github: "https://github.com/gitrodrigues1",
   },
 } as const;
@@ -88,10 +85,13 @@ export const experience: ExperienceItem[] = [
   },
   {
     role: "System Analyst",
-    company: "Rede DOR S/A",
+    company: "Rede D'Or São Luiz S/A",
     period: "May 2016 – February 2017",
     description:
-      "Totvs Protheus Analyst. Focus on Personnel and Financial Management modules. Support for system users. Participation in projects for the incorporation of new hospital units.",
+      "TOTVS Protheus analyst supporting integrations and infrastructure in a high-criticality hospital network with strict SLAs — financial, accounting and personnel management modules.",
+    highlights: [
+      "Participated in data migration projects during the incorporation of new hospital units, keeping the integrity of flows between systems.",
+    ],
   },
   {
     role: "System Analyst",
@@ -125,31 +125,86 @@ export const experience: ExperienceItem[] = [
 
 export const education: EducationItem[] = [
   {
-    school: "Universidade Federal Fluminense",
+    school: "Universidade Federal Fluminense (UFF)",
     degree: "Technology in Computer Systems",
-    note: "In progress",
+    note: "Incomplete — interrupted in the final term, with the capstone (TCC) completed.",
     period: "August 2013 – May 2021",
   },
   {
-    school: "Escola Técnica Electra (High School)",
-    degree: "Information Technology",
-    period: "August 2004 – May 2006",
+    school: "Escola Técnica Electra",
+    degree: "IT Technician (Technical High School)",
+    note: "Completed in December 2005.",
+    period: "August 2004 – December 2005",
   },
 ];
 
-export const workflow: string[] = [
-  "Mobile-First, Responsive Design",
-  "Cross Browser Testing & Debugging",
-  "Cross Functional Teams",
-  "Agile Development & Scrum",
+export const stackGroups: StackGroup[] = [
+  {
+    title: "APIs & Integration",
+    items: [
+      "REST",
+      "Webhooks",
+      "EDA",
+      "ERP & external platform integrations",
+      "Partner API contracts",
+    ],
+  },
+  {
+    title: "Cloud",
+    items: [
+      "AWS — EC2 · S3 · RDS · Lambda · ECS · SNS · SQS",
+      "Azure (fundamentals)",
+      "GCP (fundamentals)",
+    ],
+  },
+  {
+    title: "DevOps",
+    items: [
+      "Git",
+      "Maven",
+      "Docker",
+      "CI/CD — Jenkins & GitHub Actions",
+      "Kubernetes (fundamentals)",
+      "Terraform (fundamentals)",
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      "MS SQL Server",
+      "MySQL",
+      "Redis",
+      "Relational modeling & migrations",
+      "Performance tuning & caching",
+    ],
+  },
+  {
+    title: "Observability",
+    items: ["Grafana", "Log analysis", "Automated alerting"],
+  },
+  {
+    title: "Languages & Frameworks",
+    items: ["Java (Spring Boot, Spring Data)", "Node.js", "NestJS", "JavaScript"],
+  },
+];
+
+export const practices: string[] = [
+  "TDD (JUnit, Jest)",
+  "Microservices",
+  "Clean Architecture",
+  "SOLID",
+  "Design Patterns",
+  "Cross-functional squads",
 ];
 
 export const interests: string[] = [
-  "A business analyst changing career to become a developer, finishing graduation.",
-  "When forced indoors, I split a large amount of my free time educating and entertaining my 3 children and exploring the latest technology advancements in the front-end web development world.",
+  "A business analyst turned developer — the career change is complete, and building integrations and APIs is now the day job.",
+  "When forced indoors, I split a large amount of my free time educating and entertaining my 3 children and exploring the latest technology advancements in the web development world.",
 ];
 
 export const awards: string[] = [
+  "AWS Certified Solutions Architect – Associate",
+  "AWS Certified Cloud Practitioner",
   "Java – Collection e Streams – Digital Innovation One",
   "Introdução ao Github e comandos essenciais para trabalhar em equipe – Digital Innovation One",
   "Modelagem de Processos com Bizagi (BPMN)",

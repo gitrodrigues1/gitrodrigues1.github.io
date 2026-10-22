@@ -21,9 +21,9 @@ const mulish = Mulish({
 });
 
 export const metadata: Metadata = {
-  title: "Marcos Ramos · Front-end Developer",
+  title: "Marcos Ramos · Backend Developer",
   description:
-    "Resume of Marcos Ramos — front-end developer based in Rio de Janeiro, passionate about technology, music and building for the web.",
+    "Resume of Marcos Ramos — Backend Developer specialized in systems integration and REST APIs. AWS certified, based in Rio de Janeiro.",
 };
 
 export const viewport: Viewport = {

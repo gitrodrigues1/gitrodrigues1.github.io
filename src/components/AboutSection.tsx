@@ -45,12 +45,15 @@ export default function AboutSection() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <h1 className="mt-6 font-heading text-6xl font-bold uppercase leading-[0.95] text-slate-100 sm:text-7xl lg:text-8xl">
-          {profile.firstName}{" "}
-          <span className="bg-gradient-to-r from-primary via-gold to-primary-soft bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,122,77,0.35)]">
+        <h1 className="mt-6 font-heading text-5xl font-bold uppercase leading-[0.95] text-slate-100 sm:text-6xl lg:text-7xl">
+          <span className="block">{profile.firstName}</span>
+          <span className="block bg-gradient-to-r from-primary via-gold to-primary-soft bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,122,77,0.35)]">
             {profile.lastName}
           </span>
         </h1>
+        <p className="mt-4 font-heading text-lg font-medium uppercase tracking-[0.2em] text-slate-300 sm:text-xl">
+          {profile.tagline}
+        </p>
       </Reveal>
 
       <Reveal delay={0.2}>
