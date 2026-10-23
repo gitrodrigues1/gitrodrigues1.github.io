@@ -6,7 +6,7 @@ import Section from "./Section";
 import { useI18n } from "@/i18n/locale";
 
 export default function AwardsSection() {
-  const { content, fullName } = useI18n();
+  const { content } = useI18n();
 
   return (
     <Section id="awards" title={content.ui.awardsTitle}>
@@ -22,12 +22,6 @@ export default function AwardsSection() {
           </li>
         ))}
       </ul>
-
-      <Reveal delay={0.2} className="mt-16 text-center">
-        <p className="text-xs uppercase tracking-[0.25em] text-fg-faint">
-          © {new Date().getFullYear()} {fullName} · {content.ui.builtWith}
-        </p>
-      </Reveal>
     </Section>
   );
 }

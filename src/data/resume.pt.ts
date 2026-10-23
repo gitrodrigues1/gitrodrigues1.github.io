@@ -24,6 +24,7 @@ const pt: ResumeContent = {
     { id: "skills", label: "Habilidades" },
     { id: "interests", label: "Interesses" },
     { id: "awards", label: "Certificações" },
+    { id: "contact", label: "Contato" },
   ],
   experience: [
     {
@@ -87,14 +88,14 @@ const pt: ResumeContent = {
       company: "Korus Consultoria",
       period: "Maio 2014 – Dezembro 2014",
       description:
-        "Suporte a novos projetos do ERP Totvs e aos projetos legados. Foco no mercado de Vendas.",
+        "Suporte a novos projetos do ERP Totvs e aos projetos legados. Foco no mercado de Vendas/Varejo.",
     },
     {
       role: "Técnico de TI",
       company: "DEC 11 Hardware Informática",
       period: "Setembro 2006 – Maio 2014",
       description:
-        "Comecei como estagiário e fui efetivado. Suporte técnico para um grupo de 12 lojas de produtos de tecnologia (placas-mãe, processadores, armazenamento, roteadores e muito mais). Inclui atendimento a clientes.",
+        "Comecei como estagiário e fui efetivado. Suporte técnico para um grupo de 12 lojas de produtos de tecnologia (placas-mãe, processadores, armazenamento, roteadores e muito mais). Aqui começou minha carreira em ERP, onde pude realizar a primeira implantação de um sistema TOTVS Protheus.",
     },
   ],
   education: [
@@ -169,8 +170,8 @@ const pt: ResumeContent = {
     "Squads multifuncionais",
   ],
   interests: [
-    "Um analista de negócios que virou desenvolvedor — a transição de carreira está completa, e construir integrações e APIs é agora o trabalho do dia a dia.",
-    "Quando estou recolhido em casa, divido grande parte do meu tempo livre educando e entretendo meus 3 filhos e explorando as novidades tecnológicas do mundo do desenvolvimento web.",
+    "Tecnologias emergentes em desenvolvimento web, backend, IA e computação em nuvem.",
+    "Possuo interesses em música, natureza, esportes e aprender novos idiomas. Gosto de explorar trilhas, cachoeiras e praias.",
   ],
   awards: [
     "AWS Certified Solutions Architect – Associate (SAA-C03)",
@@ -197,6 +198,10 @@ const pt: ResumeContent = {
     skillsTitle: "Habilidades",
     interestsTitle: "Interesses",
     awardsTitle: "Certificações & Reconhecimentos",
+    contactTitle: "Contato",
+    contactIntro:
+      "Aberto a novas oportunidades e boas conversas sobre backend, APIs, integrações e nuvem. A forma mais rápida de falar comigo é por e-mail.",
+    contactEmailLabel: "Enviar e-mail",
     builtWith: "Construído com Next.js, Tailwind CSS & three.js",
   },
 };

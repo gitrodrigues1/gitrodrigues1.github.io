@@ -55,6 +55,9 @@ export interface UIStrings {
   skillsTitle: string;
   interestsTitle: string;
   awardsTitle: string;
+  contactTitle: string;
+  contactIntro: string;
+  contactEmailLabel: string;
   builtWith: string;
 }
 

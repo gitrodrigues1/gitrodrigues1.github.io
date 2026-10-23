@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   FaBriefcase,
   FaCode,
+  FaEnvelope,
   FaGraduationCap,
   FaHeart,
   FaTrophy,
@@ -23,6 +24,7 @@ const NAV_ICONS: Record<string, IconType> = {
   skills: FaCode,
   interests: FaHeart,
   awards: FaTrophy,
+  contact: FaEnvelope,
 };
 
 /**

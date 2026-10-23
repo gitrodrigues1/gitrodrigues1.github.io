@@ -24,6 +24,7 @@ const en: ResumeContent = {
     { id: "skills", label: "Skills" },
     { id: "interests", label: "Interests" },
     { id: "awards", label: "Awards" },
+    { id: "contact", label: "Contact" },
   ],
   experience: [
     {
@@ -94,7 +95,7 @@ const en: ResumeContent = {
       company: "DEC 11 Hardware Informática",
       period: "September 2006 – May 2014",
       description:
-        "Started as intern and hired later. Technical support for a group of 12 stores that sells technology products (motherboards, processors, storages, routers and many more). Client support included.",
+        "Started as intern and hired later. Technical support for a group of 12 stores that sells technology products (motherboards, processors, storages, routers and many more). This is where my career in ERP started, where I could perform the first implementation of a TOTVS Protheus system.",
     },
   ],
   education: [
@@ -169,8 +170,8 @@ const en: ResumeContent = {
     "Cross-functional squads",
   ],
   interests: [
-    "A business analyst turned developer — the career change is complete, and building integrations and APIs is now the day job.",
-    "When forced indoors, I split a large amount of my free time educating and entertaining my 3 children and exploring the latest technology advancements in the web development world.",
+    "Emerging technologies in web development, backend, AI and cloud computing.",
+    "I have interests in music, nature, sports and learning new languages. I enjoy exploring trails, waterfalls and beaches.",
   ],
   awards: [
     "AWS Certified Solutions Architect – Associate (SAA-C03)",
@@ -197,6 +198,10 @@ const en: ResumeContent = {
     skillsTitle: "Skills",
     interestsTitle: "Interests",
     awardsTitle: "Awards & Certifications",
+    contactTitle: "Contact",
+    contactIntro:
+      "Open to new opportunities and good conversations about backend, APIs, integrations and cloud. The fastest way to reach me is by email.",
+    contactEmailLabel: "Send an email",
     builtWith: "Built with Next.js, Tailwind CSS & three.js",
   },
 };
