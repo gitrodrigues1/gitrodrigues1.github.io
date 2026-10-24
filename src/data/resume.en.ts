@@ -9,7 +9,7 @@ const en: ResumeContent = {
     location: ["Rio de Janeiro · RJ"],
     email: "rodrigues.ramos@gmail.com",
     about: [
-      "Backend developer with 4+ years of experience in systems integrations and REST APIs in high-demand environments. Used to working in cross-functional squads, collaborating directly with product, business and external technical partner teams.",
+      "Backend developer with 4+ years of experience in systems integrations and REST APIs. Used to working in cross-functional squads, collaborating directly with product, business and external technical partner teams.",
       "Proven track record of integration with external partners (VTEX, carriers, ERPs), data flow validation, log analysis and troubleshooting of failures in production. English B2 (TOEFL ITP).",
     ],
     social: {
