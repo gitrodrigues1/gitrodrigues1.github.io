@@ -5,11 +5,11 @@ const pt: ResumeContent = {
     firstName: "Marcos",
     lastName: "Ramos",
     role: "Desenvolvedor Backend",
-    tagline: "Especialista em Integração de Sistemas e APIs",
+    tagline: "Integração de Sistemas e APIs",
     location: ["Rio de Janeiro · RJ"],
     email: "rodrigues.ramos@gmail.com",
     about: [
-      "Desenvolvedor Backend com mais de 4 anos de experiência em integrações de sistemas e APIs REST em ambientes de alta demanda. Habituado a atuar em squads multifuncionais, colaborando diretamente com times de produto, negócios e parceiros técnicos externos.",
+      "Desenvolvedor Backend com experiência em integrações de sistemas e APIs REST. Habituado a atuar em squads multifuncionais, colaborando diretamente com times de produto, negócios e parceiros técnicos externos.",
       "Histórico comprovado de integração com parceiros externos (VTEX, transportadoras, ERPs), validação de fluxos de dados, análise de logs e troubleshooting de falhas em produção. Inglês B2 (TOEFL ITP).",
     ],
     social: {
@@ -202,7 +202,7 @@ const pt: ResumeContent = {
     contactIntro:
       "Aberto a novas oportunidades e boas conversas sobre backend, APIs, integrações e nuvem. A forma mais rápida de falar comigo é por e-mail.",
     contactEmailLabel: "Enviar e-mail",
-    builtWith: "Construído com Next.js, Tailwind CSS & three.js",
+    builtWith: "Construído com Next.js, Tailwind CSS & Canvas rain",
   },
 };
 

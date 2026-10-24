@@ -38,7 +38,7 @@ export default function ContactSection() {
       <Reveal delay={0.1}>
         <a
           href={`mailto:${profile.email}`}
-          className="mt-8 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-primary to-accent px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_-12px_rgba(255,122,77,0.6)]"
+          className="mt-8 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-primary to-accent px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_-12px_rgba(34,197,94,0.6)]"
         >
           <FaEnvelope aria-hidden="true" />
           {content.ui.contactEmailLabel}
@@ -56,7 +56,7 @@ export default function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${label} — ${handleOf(href)}`}
-              className="group flex h-full items-center gap-4 rounded-xl border border-line/60 bg-surface/50 px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-[0_8px_30px_-14px_rgba(255,122,77,0.45)]"
+              className="group flex h-full items-center gap-4 rounded-xl border border-line/60 bg-surface/50 px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-[0_8px_30px_-14px_rgba(34,197,94,0.45)]"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-line bg-surface/70 text-xl text-fg-soft transition-colors duration-300 group-hover:border-primary/60 group-hover:text-primary">
                 <Icon aria-hidden="true" />

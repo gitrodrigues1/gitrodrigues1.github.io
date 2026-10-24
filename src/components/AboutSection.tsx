@@ -33,7 +33,7 @@ export default function AboutSection() {
           alt={`${profile.firstName} ${profile.lastName}`}
           width={160}
           height={160}
-          className="mb-8 aspect-square w-40 rounded-full object-cover shadow-[0_0_40px_-5px_rgba(255,122,77,0.55)] ring-2 ring-primary/70"
+          className="mb-8 aspect-square w-40 rounded-full object-cover shadow-[0_0_40px_-5px_rgba(34,197,94,0.55)] ring-2 ring-primary/70"
         />
       </Reveal>
 
@@ -50,7 +50,7 @@ export default function AboutSection() {
       <Reveal delay={0.1}>
         <h1 className="mt-6 font-heading text-5xl font-bold uppercase leading-[0.95] text-fg-strong sm:text-6xl lg:text-7xl">
           <span className="block">{profile.firstName}</span>
-          <span className="block bg-gradient-to-r from-primary via-gold to-primary-soft bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,122,77,0.35)]">
+          <span className="block bg-gradient-to-r from-primary via-gold to-primary-soft bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(34,197,94,0.35)]">
             {profile.lastName}
           </span>
         </h1>
@@ -96,7 +96,7 @@ export default function AboutSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface/70 text-xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-[0_0_25px_rgba(255,122,77,0.45)]"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface/70 text-xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-[0_0_25px_rgba(34,197,94,0.45)]"
             >
               <Icon />
             </a>

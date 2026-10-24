@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Mulish, Saira_Extra_Condensed } from "next/font/google";
-import ParticleField from "@/components/ParticleField";
+import MatrixRain from "@/components/MatrixRain";
 import ScrollProgress from "@/components/ScrollProgress";
 import SideNav from "@/components/SideNav";
 import SpotlightCursor from "@/components/SpotlightCursor";
@@ -54,12 +54,12 @@ export default function RootLayout({
         />
         <ThemeProvider>
           <LocaleProvider>
-            {/* Layered background: CSS gradients (far), three.js canvas (mid), noise (near) */}
+            {/* Layered background: CSS gradients (far), canvas digital rain (mid), noise (near) */}
             <div
               aria-hidden="true"
-              className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(60%_50%_at_15%_20%,rgba(255,122,77,0.10),transparent_60%),radial-gradient(50%_40%_at_85%_75%,rgba(34,211,238,0.07),transparent_60%)]"
+              className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(60%_50%_at_15%_20%,rgba(34,197,94,0.10),transparent_60%),radial-gradient(50%_40%_at_85%_75%,rgba(34,211,238,0.07),transparent_60%)]"
             />
-            <ParticleField />
+            <MatrixRain />
             <div
               aria-hidden="true"
               className="noise-overlay pointer-events-none fixed inset-0 -z-[5] opacity-[0.05] mix-blend-soft-light"

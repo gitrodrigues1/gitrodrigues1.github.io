@@ -48,7 +48,7 @@ export default function SkillsSection() {
               <Reveal delay={i * 0.05}>
                 <div
                   title={name}
-                  className="group flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-line/70 bg-surface/60 text-3xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:text-primary hover:shadow-[0_8px_30px_-12px_rgba(255,122,77,0.4)]"
+                  className="group flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-line/70 bg-surface/60 text-3xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:text-primary hover:shadow-[0_8px_30px_-12px_rgba(34,197,94,0.4)]"
                 >
                   <Icon />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-fg-mute group-hover:text-primary-soft">

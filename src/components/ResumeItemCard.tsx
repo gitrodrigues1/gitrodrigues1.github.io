@@ -22,7 +22,7 @@ export default function ResumeItemCard({
 }: ResumeItemCardProps) {
   return (
     <Reveal delay={index * 0.08}>
-      <article className="group relative overflow-hidden rounded-2xl border border-line/70 bg-surface/60 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_8px_40px_-12px_rgba(255,122,77,0.35)]">
+      <article className="group relative overflow-hidden rounded-2xl border border-line/70 bg-surface/60 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_8px_40px_-12px_rgba(34,197,94,0.35)]">
         <div
           aria-hidden="true"
           className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/10 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"

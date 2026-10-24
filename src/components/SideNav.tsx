@@ -71,7 +71,7 @@ export default function SideNav() {
               alt={fullName}
               width={128}
               height={128}
-              className="animate-float mx-auto mb-10 aspect-square w-32 rounded-full object-cover shadow-[0_0_40px_-5px_rgba(255,122,77,0.55)] ring-2 ring-primary/70"
+              className="animate-float mx-auto mb-10 aspect-square w-32 rounded-full object-cover shadow-[0_0_40px_-5px_rgba(34,197,94,0.55)] ring-2 ring-primary/70"
             />
           </span>
         </a>
