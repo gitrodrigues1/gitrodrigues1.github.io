@@ -57,7 +57,7 @@ const pt: ResumeContent = {
       company: "Oi S/A (Prestador de Serviços)",
       period: "Setembro 2017 – Novembro 2019",
       description:
-        "Documentação, testes unitários e integrados, configuração e implementação de lojas em todo o Brasil. Coordenador de treinamento.",
+        "Projeto de migração de sistemas: documentação, testes unitários e integrados, configuração, implantação e treinamento de lojas em todo o Brasil.",
     },
     {
       role: "Analista de Sistemas",
@@ -200,7 +200,7 @@ const pt: ResumeContent = {
     awardsTitle: "Certificações & Reconhecimentos",
     contactTitle: "Contato",
     contactIntro:
-      "Aberto a novas oportunidades e boas conversas sobre backend, APIs, integrações e nuvem. A forma mais rápida de falar comigo é por e-mail.",
+      "Aberto a novas oportunidades e boas conversas sobre backend, APIs, integrações e nuvem. Entre em contato.",
     contactEmailLabel: "Enviar e-mail",
     builtWith: "Construído com Next.js, Tailwind CSS & Canvas rain",
   },

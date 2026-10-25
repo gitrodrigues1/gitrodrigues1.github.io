@@ -57,7 +57,7 @@ const en: ResumeContent = {
       company: "Oi S/A (Prestador de Serviços)",
       period: "September 2017 – November 2019",
       description:
-        "Documentation, unit/integrated testing, configuration and implementation of stores throughout Brazil. Training Coordinator.",
+        "System migration project: documentation, unit/integrated testing, configuration implementation and training of stores throughout Brazil.",
     },
     {
       role: "System Analyst",

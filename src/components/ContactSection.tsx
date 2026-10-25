@@ -43,35 +43,45 @@ export default function ContactSection() {
           <FaEnvelope aria-hidden="true" />
           {content.ui.contactEmailLabel}
           <span className="font-body normal-case tracking-normal opacity-90">
-            · {profile.email}
+          
           </span>
         </a>
       </Reveal>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        {socialLinks.map(({ label, href, Icon }, i) => (
-          <Reveal key={label} delay={0.15 + i * 0.08}>
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${label} — ${handleOf(href)}`}
-              className="group flex h-full items-center gap-4 rounded-xl border border-line/60 bg-surface/50 px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-[0_8px_30px_-14px_rgba(34,197,94,0.45)]"
-            >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-line bg-surface/70 text-xl text-fg-soft transition-colors duration-300 group-hover:border-primary/60 group-hover:text-primary">
-                <Icon aria-hidden="true" />
-              </span>
-              <span className="min-w-0">
-                <span className="block font-heading text-sm font-bold uppercase tracking-[0.2em] text-fg-strong">
-                  {label}
+        {socialLinks.map(({ label, href, Icon }, i) => {
+          const isGitHub = label === "GitHub";
+          const isLinkedIn = label === "LinkedIn";
+          return (
+            <Reveal key={label} delay={0.15 + i * 0.08}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} — ${handleOf(href)}`}
+                className={`group flex h-full items-center gap-4 rounded-xl px-5 py-4 text-white shadow-[0_12px_35px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 ${
+                  isGitHub
+                    ? "bg-[#171515] hover:shadow-[0_12px_35px_-12px_rgba(23,21,21,0.6)]"
+                    : isLinkedIn
+                      ? "bg-[#0A66C2] hover:shadow-[0_12px_35px_-12px_rgba(10,102,194,0.6)]"
+                      : "bg-gradient-to-r from-primary to-accent hover:shadow-[0_12px_35px_-12px_rgba(34,197,94,0.6)]"
+                }`}
+              >
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/15 text-xl text-white ring-1 ring-white/30 transition-colors duration-300 group-hover:bg-white/25">
+                  <Icon aria-hidden="true" />
                 </span>
-                <span className="block truncate text-sm text-fg-soft">
-                  {handleOf(href)}
+                <span className="min-w-0">
+                  <span className="block font-heading text-sm font-bold uppercase tracking-[0.2em] text-white">
+                    {label}
+                  </span>
+                  <span className="block truncate text-sm text-white/85">
+                    {handleOf(href)}
+                  </span>
                 </span>
-              </span>
-            </a>
-          </Reveal>
-        ))}
+              </a>
+            </Reveal>
+          );
+        })}
       </div>
 
       <Reveal delay={0.3} className="mt-16 text-center">

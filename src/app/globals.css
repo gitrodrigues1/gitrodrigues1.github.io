@@ -21,18 +21,6 @@
   --color-fg: #94a3b8; /*      slate-400 */
   --color-fg-mute: #64748b; /* slate-500 */
   --color-fg-faint: #475569; /* slate-600 */
-
-  --animate-float: float 7s ease-in-out infinite;
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
 }
 
 /*
