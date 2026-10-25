@@ -10,15 +10,15 @@ export default function ExperienceSection() {
   return (
     <Section id="experience" title={content.ui.experienceTitle}>
       <div className="space-y-6">
-        {content.experience.map((item, i) => (
+        {content.experience.map((item, index) => (
           <ResumeItemCard
-            key={`${item.company}-${item.period}`}
+            key={index}
             title={item.role}
             subtitle={item.company}
             period={item.period}
             description={item.description}
             highlights={item.highlights}
-            index={i}
+            index={index}
           />
         ))}
       </div>

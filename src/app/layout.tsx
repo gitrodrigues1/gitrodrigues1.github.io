@@ -23,11 +23,30 @@ const mulish = Mulish({
   display: "swap",
 });
 
+const THEME_DARK = "#07080f";
+const THEME_LIGHT = "#f4f6fa";
+
 /**
  * Runs before first paint so light-theme visitors never see a dark flash.
  * Must stay in sync with src/i18n/theme.tsx (key/class names).
+ *
+ * Kept as a single inline string to avoid an extra network request before
+ * the blocking script executes.
  */
-const THEME_INIT_SCRIPT = `try{var s=localStorage.getItem("resume-theme");var light=s?s==="light":window.matchMedia("(prefers-color-scheme: light)").matches;if(light){document.documentElement.classList.add("theme-light");document.documentElement.style.colorScheme="light"}}catch(e){}`;
+const THEME_INIT_SCRIPT = `
+  try {
+    const stored = localStorage.getItem("resume-theme");
+    const isLight = stored
+      ? stored === "light"
+      : window.matchMedia("(prefers-color-scheme: light)").matches;
+    if (isLight) {
+      document.documentElement.classList.add("theme-light");
+      document.documentElement.style.colorScheme = "light";
+    }
+  } catch (e) {
+    // localStorage unavailable — fall back to the default dark theme.
+  }
+`;
 
 export const metadata: Metadata = {
   title: "Marcos Ramos · Backend Developer",
@@ -37,8 +56,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#07080f" },
-    { media: "(prefers-color-scheme: light)", color: "#f4f6fa" },
+    { media: "(prefers-color-scheme: dark)", color: THEME_DARK },
+    { media: "(prefers-color-scheme: light)", color: THEME_LIGHT },
   ],
   colorScheme: "dark light",
 };

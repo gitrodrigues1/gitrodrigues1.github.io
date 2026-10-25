@@ -6,6 +6,10 @@ import ExperienceSection from "@/components/ExperienceSection";
 import InterestsSection from "@/components/InterestsSection";
 import SkillsSection from "@/components/SkillsSection";
 
+/**
+ * Single-page resume. Sections are rendered in the same order they appear
+ * in the side navigation so the scroll-spy logic stays intuitive.
+ */
 export default function Home() {
   return (
     <main>

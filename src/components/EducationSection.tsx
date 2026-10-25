@@ -10,14 +10,14 @@ export default function EducationSection() {
   return (
     <Section id="education" title={content.ui.educationTitle}>
       <div className="space-y-6">
-        {content.education.map((item, i) => (
+        {content.education.map((item, index) => (
           <ResumeItemCard
-            key={item.school}
+            key={index}
             title={item.school}
             subtitle={item.degree}
             period={item.period}
             description={item.note}
-            index={i}
+            index={index}
           />
         ))}
       </div>

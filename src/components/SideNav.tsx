@@ -16,8 +16,11 @@ import type { IconType } from "react-icons";
 import ThemeSwitch from "./ThemeSwitch";
 import LanguageSwitch from "./LanguageSwitch";
 import { useI18n } from "@/i18n/locale";
+import type { NavSection } from "@/data/resume";
 
-const NAV_ICONS: Record<string, IconType> = {
+type NavId = NavSection["id"];
+
+const NAV_ICONS: Record<NavId, IconType> = {
   about: FaUser,
   experience: FaBriefcase,
   education: FaGraduationCap,
@@ -27,6 +30,8 @@ const NAV_ICONS: Record<string, IconType> = {
   contact: FaEnvelope,
 };
 
+const SCROLL_SPY_ROOT_MARGIN = "-40% 0px -55% 0px";
+
 /**
  * Fixed vertical sidebar on desktop (like the original resume template),
  * collapsing to a sticky glass top bar on mobile.
@@ -35,16 +40,16 @@ const NAV_ICONS: Record<string, IconType> = {
 export default function SideNav() {
   const { content, fullName } = useI18n();
   const { nav, ui } = content;
-  const [active, setActive] = useState<string>(nav[0].id);
+  const [active, setActive] = useState<NavId>(nav[0].id);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting) setActive(entry.target.id as NavId);
         }
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: SCROLL_SPY_ROOT_MARGIN }
     );
 
     for (const { id } of nav) {

@@ -1,26 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import Reveal from "./Reveal";
 import { useI18n } from "@/i18n/locale";
+import { socialLinksOf } from "@/lib/social";
 
 export default function AboutSection() {
   const { content } = useI18n();
   const { profile } = content;
 
-  const socialLinks = [
-    {
-      label: "GitHub",
-      href: profile.social.github,
-      Icon: FaGithub,
-    },
-    {
-      label: "LinkedIn",
-      href: profile.social.linkedin,
-      Icon: FaLinkedinIn,
-    },
-  ];
+  const socialLinks = socialLinksOf(profile);
 
   return (
     <section
@@ -37,16 +26,6 @@ export default function AboutSection() {
         />
       </Reveal>
 
-      {/* <Reveal>
-        <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.25em] text-primary-soft">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-          </span>
-          {profile.role}
-        </span>
-      </Reveal> */}
-
       <Reveal delay={0.1}>
         <h1 className="mt-6 font-heading text-5xl font-bold uppercase leading-[0.95] text-fg-strong sm:text-6xl lg:text-7xl">
           <span className="block">{profile.firstName}</span>
@@ -61,10 +40,12 @@ export default function AboutSection() {
 
       <Reveal delay={0.2}>
         <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold uppercase tracking-wider text-fg sm:text-base">
-          {profile.location.map((part) => (
+          {profile.location.map((part, index) => (
             <span key={part}>
               {part}
-              <span className="ml-2 text-primary/60">·</span>
+              {index < profile.location.length - 1 && (
+                <span className="ml-2 text-primary/60">·</span>
+              )}
             </span>
           ))}
           <a
@@ -81,8 +62,8 @@ export default function AboutSection() {
           <p className="text-lg font-semibold text-fg-strong sm:text-xl">
             {profile.about[0]}
           </p>
-          {profile.about.slice(1).map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+          {profile.about.slice(1).map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
           ))}
         </div>
       </Reveal>

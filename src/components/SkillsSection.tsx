@@ -17,7 +17,12 @@ import Reveal from "./Reveal";
 import Section from "./Section";
 import { useI18n } from "@/i18n/locale";
 
-const devIcons: { name: string; Icon: IconType }[] = [
+interface SkillIcon {
+  name: string;
+  Icon: IconType;
+}
+
+const SKILL_ICONS: SkillIcon[] = [
   { name: "Java", Icon: FaJava },
   { name: "Spring Boot", Icon: SiSpringboot },
   { name: "NestJS", Icon: SiNestjs },
@@ -43,9 +48,9 @@ export default function SkillsSection() {
           {ui.skillsLanguages}
         </h3>
         <ul className="grid grid-cols-3 gap-4 sm:grid-cols-6">
-          {devIcons.map(({ name, Icon }, i) => (
+          {SKILL_ICONS.map(({ name, Icon }, index) => (
             <li key={name}>
-              <Reveal delay={i * 0.05}>
+              <Reveal delay={index * 0.05}>
                 <div
                   title={name}
                   className="group flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-line/70 bg-surface/60 text-3xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:text-primary hover:shadow-[0_8px_30px_-12px_rgba(34,197,94,0.4)]"

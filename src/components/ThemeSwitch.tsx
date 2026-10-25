@@ -6,7 +6,13 @@ import type { IconType } from "react-icons";
 import { useI18n } from "@/i18n/locale";
 import { useTheme, type Theme } from "@/i18n/theme";
 
-const options: { value: Theme; labelKey: "darkMode" | "lightMode"; Icon: IconType }[] = [
+interface ThemeOption {
+  value: Theme;
+  labelKey: "darkMode" | "lightMode";
+  Icon: IconType;
+}
+
+const THEME_OPTIONS: ThemeOption[] = [
   { value: "dark", labelKey: "darkMode", Icon: FaMoon },
   { value: "light", labelKey: "lightMode", Icon: FaSun },
 ];
@@ -27,7 +33,7 @@ export default function ThemeSwitch({ layoutId }: ThemeSwitchProps) {
       aria-label={content.ui.theme}
       className="inline-flex items-center gap-1 rounded-full border border-line/70 bg-ink/60 p-1"
     >
-      {options.map(({ value, labelKey, Icon }) => {
+      {THEME_OPTIONS.map(({ value, labelKey, Icon }) => {
         const isActive = theme === value;
         const label = content.ui[labelKey];
         return (

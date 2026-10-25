@@ -40,9 +40,9 @@ export default function ResumeItemCard({
             )}
             {highlights && (
               <ul className="mt-4 space-y-2.5">
-                {highlights.map((highlight) => (
+                {highlights.map((highlight, highlightIndex) => (
                   <li
-                    key={highlight.slice(0, 40)}
+                    key={highlightIndex}
                     className="flex gap-3 text-sm leading-relaxed text-fg"
                   >
                     <span
