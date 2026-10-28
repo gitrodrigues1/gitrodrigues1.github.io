@@ -103,8 +103,8 @@ const pt: ResumeContent = {
     {
       school: "Universidade Federal Fluminense (UFF)",
       degree: "Tecnologia em Sistemas para Computação",
-      note: "Incompleto — interrompido no último período, com TCC concluído.",
-      period: "Agosto 2013 – Maio 2021",
+      note: "Formação em tecnologia em sistemas para computação. Trabalho de Conclusão de Curso (TCC) concluído.",
+      period: "Agosto 2019 – Maio 2021",
     },
     {
       school: "Escola Técnica Electra",

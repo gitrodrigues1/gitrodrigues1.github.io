@@ -103,8 +103,8 @@ const en: ResumeContent = {
     {
       school: "Universidade Federal Fluminense (UFF)",
       degree: "Technology in Computer Systems",
-      note: "Incomplete — interrupted in the final term, with the capstone (TCC) completed.",
-      period: "August 2013 – May 2021",
+      note: "Education in software development and computer systems. Capstone Course Project (TCC) completed.",
+      period: "August 2019 – May 2021",
     },
     {
       school: "Escola Técnica Electra",
