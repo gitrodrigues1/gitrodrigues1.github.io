@@ -53,7 +53,7 @@ export default function SkillsSection() {
               <Reveal delay={index * 0.05}>
                 <div
                   title={name}
-                  className="group flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-line/70 bg-surface/60 text-3xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:text-primary hover:shadow-[0_8px_30px_-12px_rgba(34,197,94,0.4)]"
+                  className="group flex h-24 flex-col items-center justify-center gap-2 rounded-xl border border-line/60 bg-surface/50 text-3xl text-fg-soft transition-all duration-200 hover:border-primary/50 hover:text-primary"
                 >
                   <Icon />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-fg-mute group-hover:text-primary-soft">
@@ -74,7 +74,7 @@ export default function SkillsSection() {
           {content.stackGroups.map(({ title, items }) => (
             <div
               key={title}
-              className="rounded-xl border border-line/70 bg-surface/50 p-5 transition-colors duration-300 hover:border-accent/40"
+              className="rounded-xl border border-line/60 bg-surface/50 p-5 transition-colors duration-200 hover:border-accent/40"
             >
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
                 {title}
@@ -83,7 +83,7 @@ export default function SkillsSection() {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full border border-line bg-ink/60 px-3 py-1 text-xs text-fg-soft transition-colors duration-200 hover:border-primary/50"
+                    className="rounded-full border border-line bg-ink/60 px-3 py-1 text-xs text-fg-soft transition-colors duration-200 hover:border-primary/40"
                   >
                     {item}
                   </li>

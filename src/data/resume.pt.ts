@@ -9,8 +9,8 @@ const pt: ResumeContent = {
     location: ["Rio de Janeiro · RJ"],
     email: "rodrigues.ramos@gmail.com",
     about: [
-      "Desenvolvedor Backend com experiência em integrações de sistemas e APIs REST. Habituado a atuar em squads multifuncionais, colaborando diretamente com times de produto, negócios e parceiros técnicos externos.",
-      "Histórico comprovado de integração com parceiros externos (VTEX, transportadoras, ERPs), validação de fluxos de dados, análise de logs e troubleshooting de falhas em produção. Inglês B2 (TOEFL ITP).",
+      "Desenvolvedor Backend especializado em integrações de sistemas, APIs REST e arquitetura de microsserviços. Ao longo da carreira, projetei e entreguei integrações críticas entre ERPs, e-commerces, transportadoras e prefeituras, garantindo escalabilidade, rastreabilidade e conformidade fiscal.",
+      "Atuo bem em squads multifuncionais, colaborando com produto, negócios e parceiros técnicos externos. Tenho experiência em projetos scrum, troubleshooting de incidentes em produção e otimização de fluxos de dados. AWS Certified Solutions Architect e inglês B2",
     ],
     social: {
       linkedin: "https://www.linkedin.com/in/marcos-ramos1",
@@ -21,6 +21,7 @@ const pt: ResumeContent = {
     { id: "about", label: "Sobre" },
     { id: "experience", label: "Experiência" },
     { id: "education", label: "Formação" },
+    { id: "projects", label: "Projetos" },
     { id: "skills", label: "Habilidades" },
     { id: "interests", label: "Interesses" },
     { id: "awards", label: "Certificações" },
@@ -112,6 +113,19 @@ const pt: ResumeContent = {
       period: "Agosto 2004 – Dezembro 2005",
     },
   ],
+  projects: [
+    {
+      title: "5% Imobiliária",
+      description:
+        "Plataforma híbrida que conecta imóveis, corretores e franqueados. Site institucional com catálogo de imóveis, proposta de franquia, depoimentos e integrações para geração de leads.",
+      url: "https://5porcentoimobiliaria.com",
+      snapshots: [
+        "/projects/5porcento/desktop.png",
+        "/projects/5porcento/mobile.png",
+      ],
+      tags: ["Next.js", "React", "SEO", "Integrações"],
+    },
+  ],
   stackGroups: [
     {
       title: "APIs & Integração",
@@ -176,6 +190,7 @@ const pt: ResumeContent = {
   awards: [
     "AWS Certified Solutions Architect – Associate (SAA-C03)",
     "AWS Certified Cloud Practitioner (CLF-C02)",
+    "NestJS Fundamentals (Node.js framework)",
     "Modelagem de Processos com Bizagi (BPMN)",
     "Totvs Formação – Programação Advpl",
     "Capacitação no ERP Totvs Microsiga Protheus: Configurador",
@@ -198,11 +213,13 @@ const pt: ResumeContent = {
     skillsTitle: "Habilidades",
     interestsTitle: "Interesses",
     awardsTitle: "Certificações & Reconhecimentos",
+    projectsTitle: "Projetos",
     contactTitle: "Contato",
     contactIntro:
       "Aberto a novas oportunidades e boas conversas sobre backend, APIs, integrações e nuvem. Entre em contato.",
     contactEmailLabel: "Enviar e-mail",
     builtWith: "Construído com Next.js, Tailwind CSS & Canvas rain",
+    experienceHighlights: "Destaques",
   },
 };
 

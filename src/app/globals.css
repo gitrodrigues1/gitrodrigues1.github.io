@@ -5,8 +5,8 @@
   --font-body: var(--font-mulish), "Mulish", ui-sans-serif, sans-serif;
 
   /* Surfaces (dark is the default; see .theme-light below) */
-  --color-ink: #07080f;
-  --color-surface: #0b0d17;
+  --color-ink: #0a0c12;
+  --color-surface: #0f111a;
   --color-line: #1c2033;
 
   /* Brand */
@@ -94,4 +94,14 @@ body {
 /* Film-grain overlay to break up flat gradients */
 .noise-overlay {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* Hero tech-doodle wallpaper: separate SVGs for dark/light themes so the
+   doodles stay subtly visible regardless of the active color scheme. */
+.hero-doodles {
+  background-image: url(/tech-doodles-dark.svg);
+}
+
+.theme-light .hero-doodles {
+  background-image: url(/tech-doodles-light.svg);
 }

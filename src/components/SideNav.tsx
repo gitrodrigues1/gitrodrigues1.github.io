@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   FaBriefcase,
   FaCode,
+  FaDiagramProject,
   FaEnvelope,
   FaGraduationCap,
   FaHeart,
@@ -24,6 +25,7 @@ const NAV_ICONS: Record<NavId, IconType> = {
   about: FaUser,
   experience: FaBriefcase,
   education: FaGraduationCap,
+  projects: FaDiagramProject,
   skills: FaCode,
   interests: FaHeart,
   awards: FaTrophy,
@@ -60,7 +62,7 @@ export default function SideNav() {
   }, [nav]);
 
   return (
-    <aside className="fixed inset-x-0 top-0 z-40 border-b border-line/70 bg-surface/80 backdrop-blur-xl lg:inset-y-0 lg:left-0 lg:right-auto lg:w-64 lg:border-b-0 lg:border-r lg:bg-surface/60">
+    <aside className="fixed inset-x-0 top-0 z-40 border-b border-line/70 bg-surface/90 backdrop-blur-lg lg:inset-y-0 lg:left-0 lg:right-auto lg:w-64 lg:border-b-0 lg:border-r lg:bg-surface/80">
       <div className="flex items-center gap-4 px-5 py-3 lg:h-full lg:flex-col lg:items-stretch lg:gap-0 lg:overflow-y-auto lg:px-6 lg:py-10">
         <a
           href="#about"
@@ -76,7 +78,7 @@ export default function SideNav() {
               alt={fullName}
               width={128}
               height={128}
-              className="mx-auto mb-10 aspect-square w-32 rounded-full object-cover shadow-[0_0_40px_-5px_rgba(34,197,94,0.55)] ring-2 ring-primary/70"
+              className="mx-auto mb-10 aspect-square w-32 rounded-full object-cover shadow-lg ring-2 ring-line"
             />
           </span>
         </a>

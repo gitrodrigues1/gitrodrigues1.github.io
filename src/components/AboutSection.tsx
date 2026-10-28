@@ -16,20 +16,25 @@ export default function AboutSection() {
       id="about"
       className="relative mx-auto flex min-h-screen w-full max-w-4xl flex-col justify-center border-b border-line/50 px-6 py-20 sm:px-10 lg:px-16"
     >
+      {/* Subtle tech doodle background, WhatsApp-style opacity */}
+      <div
+        aria-hidden="true"
+        className="hero-doodles pointer-events-none absolute inset-0 -z-10 bg-[length:400px_400px] bg-repeat"
+      />
       <Reveal className="lg:hidden">
         <Image
           src="/profile.jpg"
           alt={`${profile.firstName} ${profile.lastName}`}
           width={160}
           height={160}
-          className="mb-8 aspect-square w-40 rounded-full object-cover shadow-[0_0_40px_-5px_rgba(34,197,94,0.55)] ring-2 ring-primary/70"
+          className="mb-8 aspect-square w-40 rounded-full object-cover shadow-lg ring-2 ring-line"
         />
       </Reveal>
 
       <Reveal delay={0.1}>
         <h1 className="mt-6 font-heading text-5xl font-bold uppercase leading-[0.95] text-fg-strong sm:text-6xl lg:text-7xl">
           <span className="block">{profile.firstName}</span>
-          <span className="block bg-gradient-to-r from-primary via-gold to-primary-soft bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(34,197,94,0.35)]">
+          <span className="block text-fg-strong">
             {profile.lastName}
           </span>
         </h1>
@@ -48,12 +53,6 @@ export default function AboutSection() {
               )}
             </span>
           ))}
-          <a
-            href={`mailto:${profile.email}`}
-            className="text-primary transition-colors hover:text-primary-soft"
-          >
-            {profile.email}
-          </a>
         </div>
       </Reveal>
 
@@ -77,7 +76,7 @@ export default function AboutSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface/70 text-xl text-fg-soft transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-[0_0_25px_rgba(34,197,94,0.45)]"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-surface text-xl text-fg-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:text-primary"
             >
               <Icon />
             </a>

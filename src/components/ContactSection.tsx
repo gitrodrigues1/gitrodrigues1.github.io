@@ -18,11 +18,11 @@ const SOCIAL_PALETTE: Record<
 > = {
   GitHub: {
     background: "bg-[#171515]",
-    shadow: "hover:shadow-[0_12px_35px_-12px_rgba(23,21,21,0.6)]",
+    shadow: "hover:shadow-lg",
   },
   LinkedIn: {
     background: "bg-[#0A66C2]",
-    shadow: "hover:shadow-[0_12px_35px_-12px_rgba(10,102,194,0.6)]",
+    shadow: "hover:shadow-lg",
   },
 };
 
@@ -50,7 +50,7 @@ function socialCardStyles(label: string): string {
   const palette = SOCIAL_PALETTE[label];
 
   if (!palette) {
-    return "bg-gradient-to-r from-primary to-accent hover:shadow-[0_12px_35px_-12px_rgba(34,197,94,0.6)]";
+    return "bg-gradient-to-r from-primary to-accent hover:shadow-lg";
   }
 
   return `${palette.background} ${palette.shadow}`;
@@ -65,7 +65,7 @@ function SocialCard({ label, href, Icon, handle, delay = 0 }: SocialCardProps) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`${label} — ${handle}`}
-        className={`group flex h-full items-center gap-4 rounded-xl px-5 py-4 text-white shadow-[0_12px_35px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 ${socialCardStyles(label)}`}
+        className={`group flex h-full items-center gap-4 rounded-xl px-5 py-4 text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 ${socialCardStyles(label)}`}
       >
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/15 text-xl text-white ring-1 ring-white/30 transition-colors duration-300 group-hover:bg-white/25">
           <Icon aria-hidden="true" />
@@ -96,7 +96,7 @@ export default function ContactSection() {
       <Reveal delay={0.1}>
         <a
           href={`mailto:${profile.email}`}
-          className="mt-8 inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-primary to-accent px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_35px_-12px_rgba(34,197,94,0.6)]"
+          className="mt-8 inline-flex items-center gap-3 rounded-xl bg-primary px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-[0.2em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-soft hover:text-ink"
         >
           <FaEnvelope aria-hidden="true" />
           {content.ui.contactEmailLabel}

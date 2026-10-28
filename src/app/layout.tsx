@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Mulish, Saira_Extra_Condensed } from "next/font/google";
-import MatrixRain from "@/components/MatrixRain";
 import ScrollProgress from "@/components/ScrollProgress";
 import SideNav from "@/components/SideNav";
-import SpotlightCursor from "@/components/SpotlightCursor";
 import TopBar from "@/components/TopBar";
 import { LocaleProvider } from "@/i18n/locale";
 import { ThemeProvider } from "@/i18n/theme";
@@ -41,7 +39,6 @@ const THEME_INIT_SCRIPT = `
       : window.matchMedia("(prefers-color-scheme: light)").matches;
     if (isLight) {
       document.documentElement.classList.add("theme-light");
-      document.documentElement.style.colorScheme = "light";
     }
   } catch (e) {
     // localStorage unavailable — fall back to the default dark theme.
@@ -66,26 +63,28 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${saira.variable} ${mulish.variable}`}>
+    <html
+      lang="en"
+      className={`${saira.variable} ${mulish.variable}`}
+      suppressHydrationWarning
+    >
       <body className="bg-ink font-body text-fg antialiased">
         <script
           dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
         />
         <ThemeProvider>
           <LocaleProvider>
-            {/* Layered background: CSS gradients (far), canvas digital rain (mid), noise (near) */}
+            {/* Subtle layered background: soft gradients only, no animated canvas */}
             <div
               aria-hidden="true"
-              className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(60%_50%_at_15%_20%,rgba(34,197,94,0.10),transparent_60%),radial-gradient(50%_40%_at_85%_75%,rgba(34,211,238,0.07),transparent_60%)]"
+              className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(50%_40%_at_15%_20%,rgba(34,197,94,0.06),transparent_55%),radial-gradient(40%_30%_at_85%_75%,rgba(34,211,238,0.04),transparent_50%)]"
             />
-            <MatrixRain />
             <div
               aria-hidden="true"
-              className="noise-overlay pointer-events-none fixed inset-0 -z-[5] opacity-[0.05] mix-blend-soft-light"
+              className="noise-overlay pointer-events-none fixed inset-0 -z-[5] opacity-[0.03] mix-blend-soft-light"
             />
 
             <ScrollProgress />
-            <SpotlightCursor />
             <SideNav />
             <TopBar />
 
