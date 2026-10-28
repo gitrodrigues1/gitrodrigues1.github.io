@@ -28,6 +28,14 @@ export interface StackGroup {
   items: string[];
 }
 
+export interface Project {
+  title: string;
+  description: string;
+  url: string;
+  snapshots: string[];
+  tags: string[];
+}
+
 export interface Profile {
   firstName: string;
   lastName: string;
@@ -55,10 +63,12 @@ export interface UIStrings {
   skillsTitle: string;
   interestsTitle: string;
   awardsTitle: string;
+  projectsTitle: string;
   contactTitle: string;
   contactIntro: string;
   contactEmailLabel: string;
   builtWith: string;
+  experienceHighlights: string;
 }
 
 export interface ResumeContent {
@@ -66,6 +76,7 @@ export interface ResumeContent {
   nav: NavSection[];
   experience: ExperienceItem[];
   education: EducationItem[];
+  projects: Project[];
   stackGroups: StackGroup[];
   practices: string[];
   interests: string[];

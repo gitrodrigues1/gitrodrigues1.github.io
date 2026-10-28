@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 import type { Locale } from "@/data/resume";
 import { useI18n } from "@/i18n/locale";
 
-const options: { code: Locale; label: string }[] = [
+interface LocaleOption {
+  code: Locale;
+  label: string;
+}
+
+const LOCALE_OPTIONS: LocaleOption[] = [
   { code: "en", label: "EN" },
   { code: "pt", label: "PT" },
 ];
@@ -24,7 +29,7 @@ export default function LanguageSwitch({ layoutId }: LanguageSwitchProps) {
       aria-label={content.ui.language}
       className="inline-flex items-center gap-1 rounded-full border border-line/70 bg-ink/60 p-1"
     >
-      {options.map(({ code, label }) => {
+      {LOCALE_OPTIONS.map(({ code, label }) => {
         const isActive = locale === code;
         return (
           <button

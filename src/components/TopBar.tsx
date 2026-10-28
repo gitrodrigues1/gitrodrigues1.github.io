@@ -10,7 +10,7 @@ import ThemeSwitch from "./ThemeSwitch";
  */
 export default function TopBar() {
   return (
-    <div className="fixed inset-x-0 top-0 z-30 hidden h-14 items-center justify-end gap-2 border-b border-line/40 bg-surface/50 px-6 backdrop-blur-xl lg:left-64 lg:flex">
+    <div className="fixed inset-x-0 top-0 z-30 hidden h-14 items-center justify-end gap-2 border-b border-line/40 bg-surface/80 px-6 backdrop-blur-lg lg:left-64 lg:flex">
       <ThemeSwitch layoutId="theme-active-top" />
       <LanguageSwitch layoutId="lang-active-top" />
     </div>

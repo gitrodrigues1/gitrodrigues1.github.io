@@ -14,7 +14,7 @@ export default function AwardsSection() {
         {content.awards.map((award, i) => (
           <li key={award}>
             <Reveal delay={i * 0.06}>
-              <div className="flex items-center gap-4 rounded-xl border border-line/60 bg-surface/50 px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-[0_8px_30px_-14px_rgba(251,191,36,0.35)]">
+              <div className="flex items-center gap-4 rounded-xl border border-line/60 bg-surface/50 px-5 py-4 transition-colors duration-200 hover:border-gold/50">
                 <FaTrophy className="shrink-0 text-xl text-gold" aria-hidden="true" />
                 <span className="text-sm text-fg-soft sm:text-base">{award}</span>
               </div>

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   FaBriefcase,
   FaCode,
+  FaDiagramProject,
   FaEnvelope,
   FaGraduationCap,
   FaHeart,
@@ -16,16 +17,22 @@ import type { IconType } from "react-icons";
 import ThemeSwitch from "./ThemeSwitch";
 import LanguageSwitch from "./LanguageSwitch";
 import { useI18n } from "@/i18n/locale";
+import type { NavSection } from "@/data/resume";
 
-const NAV_ICONS: Record<string, IconType> = {
+type NavId = NavSection["id"];
+
+const NAV_ICONS: Record<NavId, IconType> = {
   about: FaUser,
   experience: FaBriefcase,
   education: FaGraduationCap,
+  projects: FaDiagramProject,
   skills: FaCode,
   interests: FaHeart,
   awards: FaTrophy,
   contact: FaEnvelope,
 };
+
+const SCROLL_SPY_ROOT_MARGIN = "-40% 0px -55% 0px";
 
 /**
  * Fixed vertical sidebar on desktop (like the original resume template),
@@ -35,16 +42,16 @@ const NAV_ICONS: Record<string, IconType> = {
 export default function SideNav() {
   const { content, fullName } = useI18n();
   const { nav, ui } = content;
-  const [active, setActive] = useState<string>(nav[0].id);
+  const [active, setActive] = useState<NavId>(nav[0].id);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting) setActive(entry.target.id as NavId);
         }
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: SCROLL_SPY_ROOT_MARGIN }
     );
 
     for (const { id } of nav) {
@@ -55,7 +62,7 @@ export default function SideNav() {
   }, [nav]);
 
   return (
-    <aside className="fixed inset-x-0 top-0 z-40 border-b border-line/70 bg-surface/80 backdrop-blur-xl lg:inset-y-0 lg:left-0 lg:right-auto lg:w-64 lg:border-b-0 lg:border-r lg:bg-surface/60">
+    <aside className="fixed inset-x-0 top-0 z-40 border-b border-line/70 bg-surface/90 backdrop-blur-lg lg:inset-y-0 lg:left-0 lg:right-auto lg:w-64 lg:border-b-0 lg:border-r lg:bg-surface/80">
       <div className="flex items-center gap-4 px-5 py-3 lg:h-full lg:flex-col lg:items-stretch lg:gap-0 lg:overflow-y-auto lg:px-6 lg:py-10">
         <a
           href="#about"
@@ -71,7 +78,7 @@ export default function SideNav() {
               alt={fullName}
               width={128}
               height={128}
-              className="animate-float mx-auto mb-10 aspect-square w-32 rounded-full object-cover shadow-[0_0_40px_-5px_rgba(255,122,77,0.55)] ring-2 ring-primary/70"
+              className="mx-auto mb-10 aspect-square w-32 rounded-full object-cover shadow-lg ring-2 ring-line"
             />
           </span>
         </a>
