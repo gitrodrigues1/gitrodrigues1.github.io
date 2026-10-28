@@ -202,7 +202,7 @@ const pt: ResumeContent = {
     contactIntro:
       "Aberto a novas oportunidades e boas conversas sobre backend, APIs, integrações e nuvem. A forma mais rápida de falar comigo é por e-mail.",
     contactEmailLabel: "Enviar e-mail",
-    builtWith: "Construído com Next.js, Tailwind CSS & three.js",
+    builtWith: "Construído com Next.js & Tailwind CSS ",
   },
 };
 
