@@ -17,8 +17,8 @@ export default function InterestsSection() {
           >
             “
           </span>
-          {content.interests.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+          {content.interests.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
           ))}
         </div>
       </Reveal>

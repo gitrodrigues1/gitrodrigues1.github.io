@@ -9,8 +9,8 @@ const en: ResumeContent = {
     location: ["Rio de Janeiro · RJ"],
     email: "rodrigues.ramos@gmail.com",
     about: [
-      "Backend developer with 4+ years of experience in systems integrations and REST APIs in high-demand environments. Used to working in cross-functional squads, collaborating directly with product, business and external technical partner teams.",
-      "Proven track record of integration with external partners (VTEX, carriers, ERPs), data flow validation, log analysis and troubleshooting of failures in production. English B2 (TOEFL ITP).",
+      "Backend developer specialized in systems integration, REST APIs and microservices architecture. Throughout my career, I have designed and delivered critical integrations between ERPs, e-commerce platforms, carriers and government tax systems, ensuring scalability, traceability and fiscal compliance.",
+      "I work well in cross-functional squads, collaborating with product, business and external technical partners. I have experience in scrum projects, production incident troubleshooting and data flow optimization. AWS Certified Solutions Architect and English B2 (TOEFL ITP).",
     ],
     social: {
       linkedin: "https://www.linkedin.com/in/marcos-ramos1",
@@ -21,6 +21,7 @@ const en: ResumeContent = {
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "education", label: "Education" },
+    { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
     { id: "interests", label: "Interests" },
     { id: "awards", label: "Awards" },
@@ -57,7 +58,7 @@ const en: ResumeContent = {
       company: "Oi S/A (Prestador de Serviços)",
       period: "September 2017 – November 2019",
       description:
-        "Documentation, unit/integrated testing, configuration and implementation of stores throughout Brazil. Training Coordinator.",
+        "System migration project: documentation, unit/integrated testing, configuration implementation and training of stores throughout Brazil.",
     },
     {
       role: "System Analyst",
@@ -102,14 +103,27 @@ const en: ResumeContent = {
     {
       school: "Universidade Federal Fluminense (UFF)",
       degree: "Technology in Computer Systems",
-      note: "Incomplete — interrupted in the final term, with the capstone (TCC) completed.",
-      period: "August 2013 – May 2021",
+      note: "Education in software development and computer systems. Capstone Course Project (TCC) completed.",
+      period: "August 2019 – May 2021",
     },
     {
       school: "Escola Técnica Electra",
       degree: "IT Technician (Technical High School)",
       note: "Completed in December 2005.",
       period: "August 2004 – December 2005",
+    },
+  ],
+  projects: [
+    {
+      title: "5% Imobiliária",
+      description:
+        "Hybrid platform connecting properties, brokers and franchisees. Institutional website with property catalog, franchise proposal, testimonials and lead generation integrations.",
+      url: "https://5porcentoimobiliaria.com",
+      snapshots: [
+        "/projects/5porcento/desktop.png",
+        "/projects/5porcento/mobile.png",
+      ],
+      tags: ["Next.js", "React", "SEO", "Integrations"],
     },
   ],
   stackGroups: [
@@ -176,10 +190,11 @@ const en: ResumeContent = {
   awards: [
     "AWS Certified Solutions Architect – Associate (SAA-C03)",
     "AWS Certified Cloud Practitioner (CLF-C02)",
-    "Modelagem de Processos com Bizagi (BPMN)",
-    "Totvs Formação – Programação Advpl",
-    "Capacitação no ERP Totvs Microsiga Protheus: Configurador",
-    "Capacitação no ERP Totvs Microsiga Protheus: Arquitetura e Instalação",
+    "NestJS Fundamentals (Node.js framework)",
+    "Bizagi Modeler (BPMN)",
+    "Advpl Programming Language (TOTVS Protheus ERP)",
+    "ERP Totvs Microsiga Protheus: Configuration and Customization",
+    "ERP Totvs Microsiga Protheus: Arquitecture",
     "Certificação Microsoft 70-290 MCP Windows Server 2003",
   ],
   ui: {
@@ -198,11 +213,13 @@ const en: ResumeContent = {
     skillsTitle: "Skills",
     interestsTitle: "Interests",
     awardsTitle: "Awards & Certifications",
+    projectsTitle: "Projects",
     contactTitle: "Contact",
     contactIntro:
       "Open to new opportunities and good conversations about backend, APIs, integrations and cloud. The fastest way to reach me is by email.",
     contactEmailLabel: "Send an email",
-    builtWith: "Built with Next.js, Tailwind CSS & three.js",
+    builtWith: "Built with Next.js, Tailwind CSS & Canvas rain",
+    experienceHighlights: "Highlights",
   },
 };
 

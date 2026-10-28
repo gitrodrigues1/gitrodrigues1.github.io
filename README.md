@@ -2,15 +2,16 @@
 
 Modern personal resume site, rebuilt from the classic Start Bootstrap "Resume"
 template into a Next.js + TypeScript + Tailwind CSS application with an
-animated three.js particle backdrop and an EN ⇄ PT language toggle.
+animated Matrix-style digital-rain backdrop (Canvas 2D) and an EN ⇄ PT
+language toggle.
 
 ## Stack
 
 - [Next.js](https://nextjs.org) (App Router, static export for GitHub Pages)
 - [TypeScript](https://www.typescriptlang.org)
 - [Tailwind CSS v4](https://tailwindcss.com)
-- [three.js](https://threejs.org) — particle field and
-  UnrealBloom post-processing (`src/components/ParticleField.tsx`)
+- Canvas 2D — Matrix rain on three cylinders, camera inside, scroll-driven
+  yaw (`src/components/MatrixRain.tsx`)
 - [Framer Motion](https://motion.dev) — scroll reveals, sliding nav pill,
   scroll progress bar
 - Lightweight i18n — `EN ⇄ PT` toggle (`src/i18n/locale.tsx`), persisted in
